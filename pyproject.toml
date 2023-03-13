@@ -6,14 +6,13 @@ name = "py-easy-tools"
 version = "0.1.0"
 description = "tools"
 authors = ["pumingzheng <pumz_1991@126.com>"]
-license = "Apache License 2"
+license = "Apache License 2.0"
 readme = "README.md"
 packages = [{include = "easy_tools"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 case-convert = "^1.1.0"
-
 
 [tool.poetry.group.local.dependencies]
 black = "^23.1.0"

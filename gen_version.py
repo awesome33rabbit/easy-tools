@@ -46,3 +46,6 @@ config["tool"]["poetry"]["version"] = git_version
 # 写回 toml 文件
 with open(conf_name, "w") as f:
     toml.dump(config, f)
+
+if __name__ == "__main__":
+    pass

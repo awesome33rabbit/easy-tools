@@ -2,7 +2,7 @@
 dynamic = ["version"]
 
 [tool.poetry]
-name = "easy-tools"
+name = "py-easy-tools"
 version = "0.1.0"
 description = "tools"
 authors = ["pumingzheng <pumz_1991@126.com>"]
@@ -35,7 +35,6 @@ extend_skip = [".md"]
 skip_glob = ["dist/*"]
 extend_skip_glob = ["test/*"]
 line_length = 128
-
 
 [tool.black]
 line-length = 128

@@ -1,0 +1,2 @@
+case-convert==1.1.0 ; python_version >= "3.11" and python_version < "4.0" \
+    --hash=sha256:38c38b845dcb8537f7c062d99e3311177a24ff44e6765ff5926ab9e3bce0ed55

@@ -1,0 +1,55 @@
+[project]
+dynamic = ["version"]
+
+[tool.poetry]
+name = "easy-tools"
+version = "0.1.0"
+description = "tools"
+authors = ["pumingzheng <pumz_1991@126.com>"]
+license = "Apache License 2"
+readme = "README.md"
+packages = [{include = "easy_tools"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+case-convert = "^1.1.0"
+
+
+[tool.poetry.group.local.dependencies]
+black = "^23.1.0"
+flake8-isort = "^6.0.0"
+pre-commit = "^3.1.1"
+setuptools-scm = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.setuptools_scm]
+
+[tool.isort]
+profile = "black"
+skip = [".gitignore"]
+extend_skip = [".md"]
+skip_glob = ["dist/*"]
+extend_skip_glob = ["test/*"]
+line_length = 128
+
+
+[tool.black]
+line-length = 128
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | scripts
+)/
+'''

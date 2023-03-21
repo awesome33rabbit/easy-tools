@@ -16,6 +16,7 @@ case-convert = "^1.1.0"
 pycryptodome = "^3.17"
 pyhumps = "^3.8.0"
 pytz = "^2022.7.1"
+django = {"version" = "^4.1.7", extras = ["centerapi"]}
 
 [tool.poetry.group.local.dependencies]
 black = "^23.1.0"
@@ -23,6 +24,9 @@ flake8-isort = "^6.0.0"
 pre-commit = "^3.1.1"
 setuptools-scm = "^7.1.0"
 toml = "^0.10.2"
+
+[tool.poetry.extras]
+center = ["centerapi"]
 
 [build-system]
 requires = ["poetry-core"]

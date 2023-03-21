@@ -13,6 +13,9 @@ packages = [{include = "easy_tools"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 case-convert = "^1.1.0"
+pycryptodome = "^3.17"
+pyhumps = "^3.8.0"
+pytz = "^2022.7.1"
 
 [tool.poetry.group.local.dependencies]
 black = "^23.1.0"

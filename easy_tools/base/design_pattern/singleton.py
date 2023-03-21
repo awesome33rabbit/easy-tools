@@ -1,3 +1,11 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# @Author   : pu mingzheng <pumz_1991@126.com>
+# @Time     : 2023/03/14 10:48:38
+# @File     : easy_tools/base/design_pattern - singleton.py
+# @Software : python3.11 PyCharm
+# @Desc     : TODO
+
 from functools import wraps
 
 

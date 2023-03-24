@@ -22,3 +22,16 @@ def timestamp_to_datetime(timestamp: int, timezone=default_tz) -> str:
     """
     res = datetime.datetime.fromtimestamp(timestamp, timezone).strftime("%Y-%m-%d %H:%M:%S")
     return res
+
+
+# poetry install --with group_name
+
+# poetry add py-easy-tools[center]
+# pip install py-easy-tools[center]
+
+# poetry install --extras "mysql pgsql"
+# poetry install -E mysql -E pgsql
+# poetry install --all-extras
+
+
+# django =[{version = "3.2.17", python = "^2.7"},{version = "4.1.7", python = "^3.9"}]

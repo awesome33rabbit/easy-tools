@@ -16,7 +16,9 @@ case-convert = "^1.1.0"
 pycryptodome = "^3.17"
 pyhumps = "^3.8.0"
 pytz = "^2022.7.1"
-django = {"version" = "^4.1.7", extras = ["centerapi"]}
+
+django = {version = "^4.1.7", optional=true}
+flask = {version = "^2.2.3", optional=true}
 
 [tool.poetry.group.local.dependencies]
 black = "^23.1.0"
@@ -26,7 +28,8 @@ setuptools-scm = "^7.1.0"
 toml = "^0.10.2"
 
 [tool.poetry.extras]
-center = ["centerapi"]
+center = ["django"]
+server = ["django", "flask"]
 
 [build-system]
 requires = ["poetry-core"]
@@ -59,3 +62,66 @@ exclude = '''
   | scripts
 )/
 '''
+
+
+
+#[tool.commitizen]
+#name = "cz_customize"
+#
+#[tool.commitizen.customize]
+#message_template = "{{change_type}}({{scope}}):{{short}}"
+#example = "feature: this feature enable customize through config file"
+#schema = "<type>: <body>"
+#schema_pattern = "(fix|feat|docs|style|refactor|perf|test|build|ci|[BUILD]):(\\s.*)"
+#bump_pattern = "^(break|new|fix|hotfix)"
+#bump_map = { "break" = "MAJOR", "new" = "MINOR", "fix" = "PATCH", "hotfix" = "PATCH" }
+#change_type_order = ["BREAKING CHANGE", "feat", "fix", "refactor", "perf"]
+#info_path = "cz_customize_info.txt"
+#info = """
+#This is customized info
+#"""
+#commit_parser = "^(?P<change_type>fix|feat|docs|style|refactor|perf|test|build|ci|[BUILD]):\\s(?P<message>.*)?"
+#changelog_pattern = "^(fix|feat|docs|style|refactor|perf|test|build|ci|[BUILD])?(!)?"
+#change_type_map = { "fix" = "fix", "feat" = "feat", "docs" = "docs", "style" = "style", "refactor" = "refactor", "perf" = "perf", "test" = "test", "build" = "build", "ci" = "ci", "[BUILD]" = "[BUILD]" }
+#
+#[[tool.commitizen.customize.questions]]
+#type = "list"
+#name = "change_type"
+#choices = [
+#    { value = "fix", name = "fix: A bug fix. Correlates with PATCH in SemVer" },
+#    { value = "feat", name = "feat: A new feature. Correlates with MINOR in SemVer" },
+#    { value = "docs", name = "docs: Documentation only changes" },
+#    { value = "style", name = "style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)" },
+#    { value = "refactor", name = "refactor: A code change that neither fixes a bug not adds a feature" },
+#    { value = "perf", name = "perf: A code change that improves performance" },
+#    { value = "test", name = "test: Adding missing or correcting existing tests" },
+#    { value = "build", name = "build: Changes that affect the build system or external dependencies (example scopes: pip, docker, npm)" },
+#    { value = "ci", name = "ci: Change to our CI configuration files and scripts (example scopes: GitLabCI" },
+#    { value = "[BUILD]", name = "[BUILD]: Publish" },
+#]
+#message = "Select the type of change you are committing"
+#
+#[[tool.commitizen.customize.questions]]
+#type = "input"
+#name = "scope"
+#message = "What is the scope of this change? (class or file name): (press [enter] to skip)\n"
+#
+#[[tool.commitizen.customize.questions]]
+#type = "input"
+#name = "short"
+#message = "Write a short and imperative summary of the code changes: (lower case and no period)\n"
+#
+#[[tool.commitizen.customize.questions]]
+#type = "input"
+#name = "detail"
+#message = "Provide additional contextual information about the code changes: (press [enter] to skip\n"
+#
+#[[tool.commitizen.customize.questions]]
+#type = "confirm"
+#name = "show_message"
+#message = "Do you want to add body message in commit?"
+#
+#[[tool.commitizen.customize.questions]]
+#type = "confirm"
+#name = "show_message"
+#message = "Do you want to add body message in commit?"
